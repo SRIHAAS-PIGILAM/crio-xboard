@@ -1,51 +1,128 @@
-/* Branding */
-.brand-line {
-    width: 25px;
-    height: 4px;
-    background-color: #d90479;
-    margin-bottom: 4px;
+/* --- XBoard: Final Integrated UI Styles --- */
+
+/* General Reset */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-/* Accordion: Moves Arrow to the Left */
+/* 1. HEADER & BRANDING FIXES */
+/* Force-remove the bottom margin from the header to pull content up */
+header.mb-5 {
+  margin-bottom: 0 !important;
+  padding-top: 1.2rem !important;
+  padding-bottom: 0.6rem !important;
+  border-bottom: 1px solid #eee; /* The clean divider line */
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem !important; /* Increased Crio News Feed text size */
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #000;
+  letter-spacing: -0.5px;
+  text-transform: none;
+}
+
+/* The Pink Branding Bar above "Crio" */
+.navbar-brand::before {
+  content: "";
+  width: 32px; /* Increased width to align with branding */
+  height: 6px; /* Increased height for visibility */
+  background-color: #d83f87;
+  border-radius: 2px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* 2. MAIN CONTAINER & SECTION SPACING */
+/* Neutralize the 'my-5' class on your main div */
+.container.my-5 {
+  margin-top: 0 !important; /* Removes the huge gap above "Today" */
+  padding-top: 0 !important;
+}
+
+.container {
+  max-width: 900px;
+}
+
+/* 3. TYPOGRAPHY HIERARCHY */
+h1 {
+  font-size: 1.8rem !important; /* Reduced Today text size as requested */
+  font-weight: 800;
+  margin-top: 1rem !important; /* Tight gap below the divider line */
+  margin-bottom: 0 !important;
+  letter-spacing: -1px;
+}
+
+/* The subtitle "The insights you need..." */
+.text-muted {
+  font-size: 0.9rem !important;
+  margin-top: 0.1rem !important;
+  margin-bottom: 1.5rem !important;
+  display: block;
+  color: #6c757d !important;
+}
+
+/* 4. CAROUSEL CONTENT SPACING (Fixing the "Orange Arrow" Gap) */
+/* This targets the specific gap between Author/Date and the Description */
+.carousel-item .text-muted.small {
+  margin-bottom: 0.4rem !important; /* Reduces the gap you highlighted */
+}
+
+.carousel-item h3 {
+  margin-bottom: 0.2rem !important;
+  line-height: 1.3;
+}
+
+.carousel-item .text-secondary {
+  line-height: 1.6;
+  margin-top: 0 !important;
+}
+
+/* 5. ACCORDION STYLING */
+.accordion-item {
+  border: none !important;
+  border-bottom: 1px solid #eee !important;
+}
+
 .accordion-button {
-    background-color: white !important;
-    color: #212529 !important;
-    font-weight: 700 !important;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 15px;
-    padding: 1.5rem 0 !important;
-    /* Ensure the button is prominent */
-    position: relative;
-    z-index: 1; 
-}
-.accordion-button:not(.collapsed) {
-    background-color: white !important;
-    color: #212529 !important;
+  background-color: transparent !important;
+  color: #212529 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  padding: 1rem 0 !important;
+  box-shadow: none !important;
 }
 
+/* Move chevron to the left */
 .accordion-button::after {
-    margin-left: 0; /* Align arrow properly on left */
+  margin-left: 0.5rem;
+  order: -1;
 }
 
-/* Carousel Images: 500px Height & Aspect Ratio Control */
-.carousel-item img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover; /* Prevents stretching */
-    border-radius: 4px;
-    display: block; /* Ensures visibility */
+/* 6. IMAGE WRAPPER (16:9) */
+.news-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #f8f9fa;
 }
 
-/* Darker Carousel Controls for better visibility */
+.news-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel Control Icons */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(1);
-}
-
-/* Responsive adjustment for small screens */
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 300px;
-    }
+  filter: invert(1); /* Makes arrows visible on light backgrounds */
 }

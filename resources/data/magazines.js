@@ -12,5 +12,5 @@ magazines = [
 magazines = [
   "https://assessment-rss.s3.ap-south-1.amazonaws.com/coronavirus.rss",
   "https://assessment-rss.s3.ap-south-1.amazonaws.com/india-tech.rss",
-  "https://assessment-rss.s3.ap-south-1.amazonaws.com/sports-star.rss",
+  "https://flipboard.com/@thehindu/sportstarlive-rj3ttinvz.rss",
 ];
