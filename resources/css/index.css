@@ -1,0 +1,51 @@
+/* Branding */
+.brand-line {
+    width: 25px;
+    height: 4px;
+    background-color: #d90479;
+    margin-bottom: 4px;
+}
+
+/* Accordion: Moves Arrow to the Left */
+.accordion-button {
+    background-color: white !important;
+    color: #212529 !important;
+    font-weight: 700 !important;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 1.5rem 0 !important;
+    /* Ensure the button is prominent */
+    position: relative;
+    z-index: 1; 
+}
+.accordion-button:not(.collapsed) {
+    background-color: white !important;
+    color: #212529 !important;
+}
+
+.accordion-button::after {
+    margin-left: 0; /* Align arrow properly on left */
+}
+
+/* Carousel Images: 500px Height & Aspect Ratio Control */
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Prevents stretching */
+    border-radius: 4px;
+    display: block; /* Ensures visibility */
+}
+
+/* Darker Carousel Controls for better visibility */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
